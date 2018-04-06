@@ -1,0 +1,10 @@
+template: Testing- Hello, %s!
+defaultName: Testing stranger
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 0
+  adminConnectors:
+    - type: http
+      port: 0
