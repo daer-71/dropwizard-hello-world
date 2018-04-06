@@ -1,4 +1,4 @@
-template: Testing- Hello, %s!
+template: Testing - Hello, %s!
 defaultName: Testing stranger
 
 server:
