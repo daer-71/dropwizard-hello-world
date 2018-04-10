@@ -11,19 +11,24 @@ buildscript {
 }
 
 plugins {
+    id 'com.github.johnrengelman.shadow' version '2.0.3'
     id 'org.unbroken-dome.test-sets' version '1.4.4'
     id 'java'
+    id 'application'
     id 'idea'
 }
 
+// Does not play well with plugins {...}.
 apply plugin: 'org.junit.platform.gradle.plugin'
 
 group = 'net.homeip.daer'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
+mainClassName = 'hello.HelloWorldApplication'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -73,6 +78,7 @@ integrationTest {
     }
 }
 
+/*
 jar {
     manifest {
         attributes "Main-Class": "hello.HelloWorldApplication"
@@ -80,4 +86,12 @@ jar {
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}
+*/
+
+shadowJar {
+    baseName = 'greeter'
+    archiveName = 'greeter.jar'
+
+    mergeServiceFiles()
 }
