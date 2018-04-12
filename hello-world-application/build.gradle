@@ -1,40 +1,13 @@
-//import org.junit.platform.console.options.Details
-
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
-    }
-}
+import org.junit.platform.console.options.Details
 
 plugins {
-    id 'java'
-    id 'idea'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '2.0.3'
+    id 'org.unbroken-dome.test-sets' version '1.4.4'
 }
 
-// Does not play well with plugins {...}.
-//apply plugin: 'org.junit.platform.gradle.plugin'
+mainClassName = 'hello.HelloWorldApplication'
 
-allprojects {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    group = 'net.homeip.daer'
-    version = '1.0.0-SNAPSHOT'
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
-
-subprojects {
-    apply plugin: 'org.junit.platform.gradle.plugin'
-}
-
-
-/*
 dependencies {
     compile project (':hello-world-api')
     compile project (':hello-world-library')
@@ -51,15 +24,11 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-core', version: '2.+'
     testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '2.+'
 }
-*/
 
-/*
 junitPlatform {
     details = Details.TREE
 }
-*/
 
-/*
 test {
     // Enable JUnit 5 (Gradle 4.6+).
     useJUnitPlatform()
@@ -72,15 +41,11 @@ test {
 //        showStandardStreams = true
     }
 }
-*/
 
-/*
 testSets {
     integrationTest
 }
-*/
 
-/*
 integrationTest {
     // Enable JUnit 5 (Gradle 4.6+).
     useJUnitPlatform()
@@ -93,7 +58,6 @@ integrationTest {
         showStandardStreams = true
     }
 }
-*/
 
 /*
 jar {
@@ -106,11 +70,9 @@ jar {
 }
 */
 
-/*
 shadowJar {
     baseName = 'greeter'
     archiveName = 'greeter.jar'
 
     mergeServiceFiles()
 }
-*/
