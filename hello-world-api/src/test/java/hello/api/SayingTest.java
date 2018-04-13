@@ -6,9 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jackson.Jackson;
-import java.io.File;
 import java.io.IOException;
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 
 public class SayingTest {
