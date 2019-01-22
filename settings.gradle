@@ -1,1 +1,6 @@
 rootProject.name = 'dropwizard-hello-world'
+
+include 'hello-world-api'
+include 'hello-world-library'
+include 'hello-world-service'
+include 'hello-world-application'
